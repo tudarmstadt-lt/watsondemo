@@ -1,0 +1,16 @@
+username=Sample User
+password=Password
+error.technical=Technical Error, please Retry
+error.noquestion=A question is required
+
+invalid.user.or.password=Invalid user or password
+youve.been.logged.out=You've been logged out
+
+signin.signin=Sign In
+signup.signup=Yes please, register now!
+signin.your.username=Your username
+signin.your.password=Your password
+
+dashboard.question.placeholder=Type your question here
+dashboard.question=Question
+dashboard.numberOfAnswer=Answer#
