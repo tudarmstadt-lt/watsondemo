@@ -1,12 +1,16 @@
 Watsondemo
 ======================
 
+Sample application that shows the usage and capabilities of the Java wrapper  [JWatson](https://github.com/tudarmstadt-lt/jwatson) for the IBM Watson DQA service. The application is written in Java with the Play framework.
+
 Usage
 -----------
 
-* Add user credentials to Watson instance in `/conf/application.conf`
+* Add user credentials to your Watson instance in `/conf/application.conf`
 * Execute `sbt run`
 * Visit `http://localhost:9000/`
+
+The application is configured to use an in-memory database for storage. If you restart your application, your stored information will be lost. You can replace the database in the `application.conf` file. For more information refer to [Play Fraemwork Documentation](https://www.playframework.com/documentation/2.0.4/ScalaDatabase).
 
 License
 -------
