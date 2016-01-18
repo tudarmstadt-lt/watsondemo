@@ -95,21 +95,9 @@
                                     <div class="col-md-3">
                                         <div class="fulldate pull-right label label-info">@(index + 1)</div>
                                         <ul class="show-info">
-                                            <li><strong>Title:</strong> @(current.getTitle.split("-") {
-                                                3
-                                            }.split(":") {
-                                                0
-                                            })</li>
-                                            <li><strong>Episode#:</strong> @(current.getTitle.split("-") {
-                                                2
-                                            }.split(" ") {
-                                                2
-                                            })</li>
-                                            <li><strong>Season#:</strong> @(current.getTitle.split("-") {
-                                                1
-                                            }.split(" ") {
-                                                2
-                                            })</li>
+                                            <li><strong>Title:</strong> @(current.getTitle)</li>
+                                            <li><strong>Episode#:</strong> </li>
+                                            <li><strong>Season#:</strong> </li>
                                             <li><strong>Genre:</strong> <span class="label label-success genre">Sitcom</span></li>
                                         </ul>
                                     </div>

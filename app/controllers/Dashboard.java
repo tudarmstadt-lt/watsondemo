@@ -31,6 +31,7 @@ import play.mvc.Result;
 import play.mvc.Security;
 import views.html.dashboard;
 
+import java.io.IOException;
 import java.util.List;
 
 import static play.data.Form.form;
@@ -70,7 +71,12 @@ public class Dashboard extends Controller {
                 .create();
 
 
-        WatsonAnswer answer = watsonService.getInstance().askQuestion(question);
+        WatsonAnswer answer = null;
+        try {
+            answer = watsonService.getInstance().askQuestion(question);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Response response = new Response(answer, question);
 
         if (hasAnswer(response)) {
@@ -79,7 +85,7 @@ public class Dashboard extends Controller {
 
             List<WatsonQuestion> similar = Question.findSimilar(questionEntry);
             response.setSimilarQuestions(similar);
-
+            
             return ok(dashboard.render(request, user, response));
         } else {
             request.reject("No answers found");

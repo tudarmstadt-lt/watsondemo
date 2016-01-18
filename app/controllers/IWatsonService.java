@@ -18,9 +18,9 @@
 
 package controllers;
 
-import jwatson.Watson;
+import jwatson.JWatson;
 
 public interface IWatsonService {
-    Watson getInstance();
+    JWatson getInstance();
 }
 

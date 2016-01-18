@@ -20,23 +20,25 @@ package controllers;
 
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
-import jwatson.Watson;
+import jwatson.JWatson;
+
+import java.net.MalformedURLException;
 
 public class WatsonService implements IWatsonService {
 
-    private Watson instance;
+    private JWatson instance;
 
-    public WatsonService() {
+    public WatsonService() throws MalformedURLException {
         Config conf = ConfigFactory.load();
         String username = conf.getString("watson.username");
         String password = conf.getString("watson.password");
         String url = conf.getString("watson.url");
 
-        instance = new Watson(username, password, url);
+        instance = new JWatson(username, password, url);
     }
 
     @Override
-    public Watson getInstance() {
+    public JWatson getInstance() {
         return instance;
     }
 }
